@@ -1,1 +1,73 @@
-create database laboratorio
+CREATE DATABASE laboratorio;
+USE laboratorio;
+
+
+CREATE TABLE laboratorio.planting (
+cup	INT NOT NULL PRIMARY KEY,
+cultivo VARCHAR NOT NULL (50),
+cliente VARCHAR NOT NULL (50),
+campo VARCHAR NOT NULL (50),
+lote VARCHAR NOT NULL (50),
+material VARCHAR NOT NULL (50),
+condicion VARCHAR NOT NULL (50),
+zona VARCHAR NOT NULL (50)
+);
+
+CREATE TABLE laboratorio.archivo_de_muestras (
+codigo_unico INT NOT NULL PRIMARY KEY
+cup INT NOT NULL,
+origen VARCHAR (30) NOT NULL,
+n_caja VARCHAR (30) NOT NULL,
+ubicacion VARCHAR (30) NOT NULL,
+grado VARCHAR (30) NOT NULL,
+curado VARCHAR (30) NOT NULL,
+kg_muestra DECIMAL (3,2) NOT NULL,
+fecha_muestreo DATE NOT NULL,
+observaciones VARCHAR (50)
+);
+
+CREATE TABLE laboratorio.microsizing (
+cup INT NOT NUL,
+zaranda_red VARCHAR (30) NOT NULL,
+zaranda_taj VARCHAR (30) NOT NULL,
+grado VARCHAR (30) NOT NULL,
+fecha_microsizing DATE NOT NULL,
+humedad DECIMAL (2,2) NOT NULL,
+aprov_ DECIMAL (2,2) NOT NULL,
+partido DECIMAL (2,2) NOT NULL,
+dano_mec DECIMAL (2,2) NOT NULL,
+dano_sup DECIMAL (2,2) NOT NULL,
+roido DECIMAL (2,2) NOT NULL,
+picado DECIMAL (2,2) NOT NULL,
+fermentado_pod DECIMAL (2,2) NOT NULL,
+dano_biol DECIMAL (2,2) NOT NULL,
+sem_ard DECIMAL (2,2) NOT NULL,
+mi DECIMAL (2,2) NOT NULL,
+fuera_tipo DECIMAL (2,2) NOT NULL,
+peso_mil DECIMAL (3,1) NOT NULL,
+codigo_unico INT NOT NULL PRIMARY KEY
+);
+
+CREATE TABLE laboratorio.laboratorio_las (
+codigo_unico INT NOT NULL,
+cultivo VARCHAR (30) NOT NULL,
+n_analisis INT NOT NULL PRIMARY KEY,
+fecha_siembra DATE NOT NULL,
+pg INT NOT NULL,
+anormales INT NOT NULL,
+muertas INT NOT NULL,
+fecha_pg DATE NOT NULL,
+sustrato VARCHAR (30) NOT NULL,
+anormalidades VARCHAR (30) NOT NULL,
+retest VARCHAR (30),
+muestra_origen VARCHAR (30),
+observaciones VARCHAR (50)
+);
+
+CREATE TABLE laboratorio.informacion_camiones (
+cup INT NOT NULL, 
+kgs_lote INT NOT NULL,
+cantidad_camiones INT NOT NULL,
+observado VARCHAR (10),
+motivo_observacion VARCHAR (20)
+);
