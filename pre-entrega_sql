@@ -4,13 +4,13 @@ USE laboratorio;
 
 CREATE TABLE laboratorio.planting (
 cup	INT NOT NULL PRIMARY KEY,
-cultivo VARCHAR NOT NULL (50),
-cliente VARCHAR NOT NULL (50),
-campo VARCHAR NOT NULL (50),
-lote VARCHAR NOT NULL (50),
-material VARCHAR NOT NULL (50),
-condicion VARCHAR NOT NULL (50),
-zona VARCHAR NOT NULL (50)
+cultivo VARCHAR (50) NOT NULL,
+cliente VARCHAR (50) NOT NULL,
+campo VARCHAR (50) NOT NULL,
+lote VARCHAR (50) NOT NULL,
+material VARCHAR (50) NOT NULL,
+condicion VARCHAR (50) NOT NULL,
+zona VARCHAR (50) NOT NULL
 );
 
 CREATE TABLE laboratorio.archivo_de_muestras (
